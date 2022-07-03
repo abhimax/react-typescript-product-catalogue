@@ -10,20 +10,54 @@ const Container = styled.div`
   background-color: ${(props) => props.theme.background.primary};
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 `;
 
 const Section = styled.div`
-  width: 55%;
+  width: 80%;
+
+  display: flex;
+  flex-direction: row;
+`;
+
+const LeftSection = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+`;
+
+const RightSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 16.7rem;
+
+  flex: 0;
 `;
 
 const TabsSection = styled.div`
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 `;
 
 const FilterCardSection = styled.div`
   margin-top: 1.5rem;
 `;
 
-export { Container, Section, TabsSection, FilterCardSection };
+const ProductCardsSection = styled.div`
+  margin-top: 1rem;
+`;
+
+const ProductDetailsCardSection = styled.div`
+  margin-left: 1rem;
+`;
+
+export {
+  Container,
+  Section,
+  TabsSection,
+  FilterCardSection,
+  ProductCardsSection,
+  LeftSection,
+  RightSection,
+  ProductDetailsCardSection,
+};

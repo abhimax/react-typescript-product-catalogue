@@ -8,6 +8,9 @@ const BottomSection = styled.div``;
 
 const DetailsSection = styled.div``;
 
-const DetailsText = styled.p``;
+const DetailsText = styled.p`
+  font-size: 0.9rem;
+  font-weight: 600;
+`;
 
 export { Section, TopSection, BottomSection, DetailsSection, DetailsText };

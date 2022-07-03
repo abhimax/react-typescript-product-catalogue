@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Section = styled.div`
-  margin-top: 5rem;
+    margin-top: 3rem;
 `;
 
 const HeadingSection = styled.div``;
