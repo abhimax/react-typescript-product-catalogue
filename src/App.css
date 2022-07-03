@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+input,
+.MuiFormControlLabel-root,
+.MuiTypography-root,
+.MuiButtonBase-root {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: normal;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
