@@ -4,15 +4,16 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
 import { Section, CheckBoxSection } from "./Category.styled";
+import { ICategoryProps } from "./category.d";
 
-const Category: FC = () => {
+const Category: FC <ICategoryProps>= ({label, value, defaultChecked}) => {
   return (
     <Section>
       <CheckBoxSection>
         <FormControlLabel
-          control={<Checkbox defaultChecked />}
-          label="Software Development"
-          value={"label1"}
+          control={<Checkbox defaultChecked={defaultChecked} />}
+          label={label}
+          value={value}
         />
       </CheckBoxSection>
     </Section>

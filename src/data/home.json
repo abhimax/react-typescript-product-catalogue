@@ -2,5 +2,33 @@
     "header": {
       "heading": "Create Demand",
       "subHeading": "Search the product you need here. Use tags to find any alternative."
+    },
+  "categories": [
+    {
+      "id": "ci-1",
+      "label": "Software Development",
+      "value": "software_development"
+    },
+    {
+      "id": "ci-2",
+      "label": "Daily Business",
+      "value": "daily_business"
+    },
+
+    {
+      "id": "ci-3",
+      "label": "Graphic Editors",
+      "value": "graphic_editors"
+    },
+    {
+      "id": "ci-4",
+      "label": "Text Editors",
+      "value": "text_editors"
+    },
+    {
+      "id": "ci-5",
+      "label": "Management Tools",
+      "value": "management_tools"
     }
+  ]
   }

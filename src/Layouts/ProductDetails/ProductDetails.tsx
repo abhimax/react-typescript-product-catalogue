@@ -28,11 +28,11 @@ const ProductDetails: FC = () => {
       </NameSection>
 
       <TagsSection>
-        <Tag />
-        <Tag />
-        <Tag />
-        <Tag />
-        <Tag />
+        <Tag label="PDF" />
+        <Tag label="Change" />
+        <Tag label="Create" />
+        <Tag label="Maintenance" />
+        <Tag label="Business" />
       </TagsSection>
 
       <ButtonSection></ButtonSection>

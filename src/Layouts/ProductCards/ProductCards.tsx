@@ -4,14 +4,23 @@ import { ProductCard } from "../ProductCard/index";
 
 import { Section } from "./ProductCards.styled";
 
-const ProductCards: React.FC = () => {
+import { IProductCardsProps } from "./ProductCards.d"
+
+import productsData from "../../data/products.json"
+
+const ProductCards: React.FC<IProductCardsProps> = ({ cardsData }) => {
   return (
     <Section>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      {
+        productsData.map((item, key)=>{
+          return <ProductCard
+            key={ key }
+            productName={item.productName}
+            tags={item.tags}
+            category={item.category}
+          />
+        })
+      }
     </Section>
   );
 };

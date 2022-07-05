@@ -15,8 +15,11 @@ const NameSection = styled.div``;
 const NameText = styled.h1`
   font-size: 0.8rem;
   font-weight: 600;
-
+  max-width: 100px;
   color: ${(props) => props.theme.color.blue};
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 export { Section, NameSection, NameText };

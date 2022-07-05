@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
     Section,
     IconSection,
@@ -5,15 +6,22 @@ import {
     Input,
     Icon,
   } from "./SearchInput.styled";
+  import { ISearchInputProps } from "./SearchInput.d"
   
-  const SearchInput = () => {
+  const SearchInput: FC<ISearchInputProps> = ({searchValue, setSearchValue }) => {
     return (
       <Section>
         <IconSection>
           <Icon className="search-icon" src="icons/search.svg" />
         </IconSection>
         <InputSection>
-          <Input placeholder="Type here..." />
+          <Input
+            placeholder="Type here..."
+            value={searchValue}
+            onChange={(e) => {
+              return setSearchValue(e.target.value);
+            }}
+          />
         </InputSection>
       </Section>
     );

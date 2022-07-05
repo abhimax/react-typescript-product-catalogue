@@ -13,25 +13,27 @@ import {
   CategoryText,
 } from "./ProductCard.styled";
 
-const ProductCard: FC = () => {
+import { IProductCardProps } from "./ProductCard.d"
+
+const ProductCard: FC<IProductCardProps> = ({ productName, tags, category }) => {
   return (
     <Section>
       <LeftSection>
         <NameSection>
-          <NameText>Lorem ipsum dolor, sit amet consectetur</NameText>
+          <NameText>{ productName }</NameText>
         </NameSection>
 
         <TagsSection>
-          <Tag />
-          <Tag />
-          <Tag />
-          <Tag />
-          <Tag />
+          {
+            tags.map((item, key)=>{
+              return <Tag key={`${key}-${item}`} label={item}/>
+            })
+          }
         </TagsSection>
       </LeftSection>
       <RightSection>
         <CategorySection>
-          <CategoryText>Daily Business</CategoryText>
+          <CategoryText>{ category }</CategoryText>
         </CategorySection>
       </RightSection>
     </Section>

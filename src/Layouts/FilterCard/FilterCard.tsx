@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Categories } from "../Categories/index";
 
 import { SearchInput } from "../../components/index";
+import { IFilterCardProps } from "./FilterCard.d";
 
 import {
   Section,
@@ -10,7 +11,7 @@ import {
   CategoriesSection,
   SearchSection,
 } from "./FilterCard.styled";
-const FilterCard: FC = () => {
+const FilterCard: FC<IFilterCardProps> = ({ searchValue, setSearchValue}) => {
     return (
         <Section>
           <HeadingSection>
@@ -22,7 +23,10 @@ const FilterCard: FC = () => {
           </CategoriesSection>
     
           <SearchSection>
-            <SearchInput />
+            <SearchInput 
+              searchValue= { searchValue }
+              setSearchValue = { setSearchValue }
+            />
           </SearchSection>
         </Section>
       );
