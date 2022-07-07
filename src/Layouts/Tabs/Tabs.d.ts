@@ -1,0 +1,3 @@
+interface ITabsProps { }
+
+export { ITabsProps }

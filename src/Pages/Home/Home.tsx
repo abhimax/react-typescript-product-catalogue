@@ -24,7 +24,29 @@ import {
 import { ICategoryRootState } from "../../store/reducer/types/category.d";
 import { IProductDetailsRootState } from "../../store/reducer/types/productDetails.d";
 import { IProduct } from "../../types/types.d";
+import { ITabsRootState } from "../../store/reducer/types/tabs.d";
 
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {children}
+    </div>
+  );
+}
 const HomePage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
 
@@ -37,6 +59,10 @@ const HomePage = () => {
 
   const postDetails = useSelector(
     (state: IProductDetailsRootState) => state.productDetails.product
+  );
+
+  const activeTab = useSelector(
+    (state: ITabsRootState) => state.tabs.activeTab
   );
 
   // filter product data
@@ -73,7 +99,7 @@ const HomePage = () => {
           <TabsSection>
             <Tabs />
           </TabsSection>
-
+          <TabPanel value={activeTab} index={0}>
           <FilterCardSection>
             <FilterCard
               searchValue={searchValue}
@@ -84,6 +110,7 @@ const HomePage = () => {
           <ProductCardsSection>
             <ProductCards cardsData={p_data} />
           </ProductCardsSection>
+          </TabPanel>
         </LeftSection>
 
         <RightSection>
