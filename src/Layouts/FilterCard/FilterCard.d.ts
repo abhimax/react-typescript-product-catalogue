@@ -3,4 +3,4 @@ interface IFilterCardProps {
     setSearchValue: React.Dispatch<React.SetStateAction<string>>
 }
 
-export { IFilterCardProps }
+export { IFilterCardProps, onCategoryClick }

@@ -1,7 +1,7 @@
+import { IProduct } from "../../types/types.d";
 interface IProductCardProps {
-    productName: string
-    tags: Array<string>
-    category: string
+  props: IProduct;
+  onCardClick: (product: IProduct) => void;
 }
 
-export { IProductCardProps }
+export { IProductCardProps };

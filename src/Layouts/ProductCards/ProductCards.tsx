@@ -1,26 +1,31 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
 import { ProductCard } from "../ProductCard/index";
-
 import { Section } from "./ProductCards.styled";
+import { setProduct } from "../../store/reducer/productDetails.reducer";
+import { IProductCardsProps } from "./ProductCards.d";
+import { IProduct } from "../../types/types.d";
 
-import { IProductCardsProps } from "./ProductCards.d"
 
-import productsData from "../../data/products.json"
 
 const ProductCards: React.FC<IProductCardsProps> = ({ cardsData }) => {
+  const dispatch = useDispatch();
+
+  const cardClickHandel = (product: IProduct) => {
+    return dispatch(
+      setProduct({
+        product: product,
+      })
+    );
+  };
+
   return (
     <Section>
-      {
-        productsData.map((item, key)=>{
-          return <ProductCard
-            key={ key }
-            productName={item.productName}
-            tags={item.tags}
-            category={item.category}
-          />
-        })
-      }
+      {cardsData?.map((item, i) => {
+        return (
+          <ProductCard key={i} props={item} onCardClick={cardClickHandel} />
+        );
+      })}
     </Section>
   );
 };

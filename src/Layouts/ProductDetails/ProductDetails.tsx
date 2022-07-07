@@ -1,5 +1,4 @@
 import { FC } from "react";
-
 import { Options } from "../Options/index";
 import { Tag } from "../../components/index";
 
@@ -16,7 +15,9 @@ import {
   OptionsSection,
 } from "./ProductDetails.styled";
 
-const ProductDetails: FC = () => {
+import { IProductDetailsProps } from "./productDetails.d";
+
+const ProductDetails: FC<IProductDetailsProps> = ({ props }) => {
   return (
     <Section>
       <HeadingSection>
@@ -24,26 +25,19 @@ const ProductDetails: FC = () => {
       </HeadingSection>
 
       <NameSection>
-        <NameText>Lorem, ipsum dolor sit amet consectetur</NameText>
+        <NameText>{props?.productName}</NameText>
       </NameSection>
 
       <TagsSection>
-        <Tag label="PDF" />
-        <Tag label="Change" />
-        <Tag label="Create" />
-        <Tag label="Maintenance" />
-        <Tag label="Business" />
+        {props?.tags?.map((item, i) => {
+          return <Tag key={i} label={item} />;
+        })}
       </TagsSection>
 
       <ButtonSection></ButtonSection>
 
       <DetailsSection>
-        <DetailsText>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
-          architecto, provident quos, dolores totam deleniti quae unde nesciunt
-          eum aspernatur suscipit ipsum obcaecati. Deleniti nobis dolor
-          laudantium dolore possimus accusamus.
-        </DetailsText>
+        <DetailsText>{props?.description}</DetailsText>
 
         <OptionsSection>
           <Options />

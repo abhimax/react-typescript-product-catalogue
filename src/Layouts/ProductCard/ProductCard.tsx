@@ -15,25 +15,27 @@ import {
 
 import { IProductCardProps } from "./ProductCard.d"
 
-const ProductCard: FC<IProductCardProps> = ({ productName, tags, category }) => {
+const ProductCard: FC<IProductCardProps> = ({ props, onCardClick }) => {
   return (
-    <Section>
+    <Section
+      onClick={() => {
+        return onCardClick(props);
+      }}
+    >
       <LeftSection>
         <NameSection>
-          <NameText>{ productName }</NameText>
+          <NameText>{props?.productName}</NameText>
         </NameSection>
 
         <TagsSection>
-          {
-            tags.map((item, key)=>{
-              return <Tag key={`${key}-${item}`} label={item}/>
-            })
-          }
+          {props?.tags?.map((item, i) => {
+            return <Tag key={`${i}-${item}`} label={item} />;
+          })}
         </TagsSection>
       </LeftSection>
       <RightSection>
         <CategorySection>
-          <CategoryText>{ category }</CategoryText>
+        <CategoryText>{props?.category}</CategoryText>
         </CategorySection>
       </RightSection>
     </Section>

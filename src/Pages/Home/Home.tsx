@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-
+import { useSelector } from "react-redux";
 import product_data from "../../data/products.json";
 import {
   Tabs,
@@ -21,19 +21,31 @@ import {
   ProductDetailsCardSection,
 } from "./Home.styled";
 
+import { ICategoryRootState } from "../../store/reducer/types/category.d";
+import { IProductDetailsRootState } from "../../store/reducer/types/productDetails.d";
+import { IProduct } from "../../types/types.d";
+
 const HomePage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
-  const [categoryValue, setCategoryValue] = useState<Array<string>>([]);
 
-  const [productsData, setProductsData] = useState(product_data);
+  const [productsData, setProductsData] =
+  useState<Array<IProduct>>(product_data);
+
+  const categories = useSelector(
+    (state: ICategoryRootState) => state.category.category
+  );
+
+  const postDetails = useSelector(
+    (state: IProductDetailsRootState) => state.productDetails.product
+  );
 
   // filter product data
   const p_data = useMemo(() => {
     return searchValue?.trim()?.length >= 1
-      ? categoryValue?.length >= 1
+      ? categories?.length >= 1
         ? productsData
             .filter((item) => {
-              return categoryValue.includes(item.category);
+              return categories.includes(item.category);
             })
             .filter((item) => {
               return item.productName
@@ -45,12 +57,12 @@ const HomePage = () => {
               .toLocaleLowerCase()
               .includes(searchValue.toLocaleLowerCase());
           })
-      : categoryValue?.length >= 1
+      : categories?.length >= 1
       ? productsData.filter((item) => {
-          return categoryValue.includes(item.category);
+          return categories.includes(item.category);
         })
       : productsData;
-  }, [searchValue, categoryValue, productsData]);
+  }, [searchValue, productsData, categories]);
 
   return (
     <Container>
@@ -75,9 +87,11 @@ const HomePage = () => {
         </LeftSection>
 
         <RightSection>
-          <ProductDetailsCardSection>
-            <ProductDetails />
-          </ProductDetailsCardSection>
+          {postDetails && (
+            <ProductDetailsCardSection>
+              <ProductDetails props={postDetails} />
+            </ProductDetailsCardSection>
+          )}
         </RightSection>
       </Section>
     </Container>

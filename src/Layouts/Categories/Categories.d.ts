@@ -1,0 +1,3 @@
+interface ICategoriesProps {}
+
+export { ICategoriesProps };

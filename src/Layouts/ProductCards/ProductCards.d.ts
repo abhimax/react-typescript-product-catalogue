@@ -1,9 +1,6 @@
+import { IProduct } from "../../types/types.d"
 interface IProductCardsProps {
-  cardsData: Array<{
-    productName: string;
-    tags: Array<string>;
-    category: string;
-  }>;
+  cardsData: Array<IProduct>;
 }
 
 export { IProductCardsProps };
