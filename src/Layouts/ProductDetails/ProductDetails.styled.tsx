@@ -3,9 +3,8 @@ import styled from "styled-components";
 const Section = styled.div`
   width: 100%;
   border-radius: 5px;
-
+  padding-bottom: 2rem;
   background-color: ${(props) => props.theme.background.secondary};
-
   display: flex;
   flex-direction: column;
 `;
@@ -39,7 +38,7 @@ const NameText = styled.h1`
 const TagsSection = styled.div`
   padding: 0 1.2rem;
   margin-top: 0.8rem;
-
+  flex-wrap: wrap;
   display: flex;
   flex-direction: row;
 `;
@@ -47,15 +46,16 @@ const TagsSection = styled.div`
 const ButtonSection = styled.div`
   padding: 0 1.2rem;
   margin-top: 0.8rem;
+  margin-top: 1.8rem;
 `;
 
 const DetailsSection = styled.div`
-  padding: 0 1.2rem;
-  margin-top: 0.8rem;
+padding: 0 1rem;
+margin-top: 0.8rem;
 `;
 
 const DetailsText = styled.p`
-  font-size: 0.9rem;
+font-size: 0.85rem;
   font-weight: 600;
 `;
 

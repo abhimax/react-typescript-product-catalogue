@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Options } from "../Options/index";
-import { Tag } from "../../components/index";
+import { Tag, Button } from "../../components/index";
 
 import {
   Section,
@@ -18,6 +18,15 @@ import {
 import { IProductDetailsProps } from "./productDetails.d";
 
 const ProductDetails: FC<IProductDetailsProps> = ({ props }) => {
+  const [activeOption, setActiveOption] = useState<string>(props?.option1!);
+
+  const buttonClickHandel = () => {
+    return window.open(
+      `${props?.manufacturerUrl}`,
+      "_blank",
+      "noopener noreferrer"
+    );
+  };
   return (
     <Section>
       <HeadingSection>
@@ -34,13 +43,28 @@ const ProductDetails: FC<IProductDetailsProps> = ({ props }) => {
         })}
       </TagsSection>
 
-      <ButtonSection></ButtonSection>
+      <ButtonSection>
+        <Button label={"Go to manufacturer"} onClick={buttonClickHandel} />
+      </ButtonSection>
 
       <DetailsSection>
         <DetailsText>{props?.description}</DetailsText>
 
         <OptionsSection>
-          <Options />
+        <Options
+            props={[
+              {
+                label: props?.option1,
+                value: props?.option1,
+              },
+              {
+                label: props?.option2,
+                value: props?.option2,
+              },
+            ]}
+            active={activeOption}
+            setActive={setActiveOption}
+          />
         </OptionsSection>
       </DetailsSection>
     </Section>

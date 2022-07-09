@@ -4,9 +4,8 @@ const Section = styled.div`
   margin: 0.3rem 0;
   border-radius: 8px;
   padding: 0.5rem 1rem 1rem 1rem;
-
   background-color: ${(props) => props.theme.background.secondary};
-
+  cursor: pointer;
   display: flex;
   flex-direction: row;
 `;
@@ -34,6 +33,7 @@ const NameText = styled.h1`
 const TagsSection = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 const CategorySection = styled.div`

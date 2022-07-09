@@ -9,12 +9,17 @@ import {
   DetailsSection,
   DetailsText,
 } from "./Option.styled";
+import { IOptionProps } from "./option.d";
 
-const Option: FC = () => {
+const Option: FC<IOptionProps> = ({ props }) => {
   return (
     <Section>
       <TopSection>
-        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel
+          value={props?.value}
+          control={<Radio />}
+          label={props?.label}
+        />
       </TopSection>
       <BottomSection>
         <DetailsSection>

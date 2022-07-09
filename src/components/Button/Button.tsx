@@ -2,11 +2,13 @@ import { FC } from "react";
 
 import { Section, Label, LabelText } from "./Button.styled";
 
-const Button: FC = () => {
+import { IButtonProps } from "./button.d";
+
+const Button: FC<IButtonProps> = ({ label, onClick }) => {
   return (
-    <Section as="button">
+    <Section as="button" onClick={onClick}>
       <Label>
-        <LabelText>Go to manufacture</LabelText>
+        <LabelText>{label}</LabelText>
       </Label>
     </Section>
   );

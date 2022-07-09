@@ -19,6 +19,7 @@ import {
   LeftSection,
   RightSection,
   ProductDetailsCardSection,
+  BlankSection,
 } from "./Home.styled";
 
 import { ICategoryRootState } from "../../store/reducer/types/category.d";
@@ -111,12 +112,14 @@ const HomePage = () => {
             <ProductCards cardsData={p_data} />
           </ProductCardsSection>
           </TabPanel>
+          <BlankSection />
         </LeftSection>
 
         <RightSection>
           {postDetails && (
             <ProductDetailsCardSection>
               <ProductDetails props={postDetails} />
+              <BlankSection />
             </ProductDetailsCardSection>
           )}
         </RightSection>

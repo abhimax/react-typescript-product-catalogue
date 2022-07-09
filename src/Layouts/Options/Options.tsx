@@ -6,11 +6,11 @@ import { Option } from "../../components/index";
 
 import { Section } from "./Options.styled";
 
-const Options: FC = () => {
-  const [value, setValue] = useState("female");
+import { IOptionsProps } from "./options.d";
 
+const Options: FC<IOptionsProps> = ({ props, active, setActive }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
+    setActive((event.target as HTMLInputElement).value);
   };
 
   return (
@@ -19,12 +19,12 @@ const Options: FC = () => {
         <RadioGroup
           aria-labelledby="demo-controlled-radio-buttons-group"
           name="controlled-radio-buttons-group"
-          value={value}
+          value={active}
           onChange={handleChange}
         >
-          <Option />
-          <Option />
-          <Option />
+          {props?.map((item, i) => {
+            return item.label && item.value && <Option key={i} props={item} />;
+          })}
         </RadioGroup>
       </FormControl>
     </Section>

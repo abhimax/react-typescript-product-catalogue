@@ -4,9 +4,6 @@ const Container = styled.div`
   min-height: 100vh;
   width: 100vw;
 
-  overflow: hidden;
-  overflow-y: scroll;
-
   background-color: ${(props) => props.theme.background.primary};
 
   display: flex;
@@ -21,17 +18,25 @@ const Section = styled.div`
 `;
 
 const LeftSection = styled.div`
+  max-width: 70%;
   display: flex;
   flex-direction: column;
-
+  overflow: hidden;
+  overflow-y: scroll;
   flex: 1;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 `;
 
 const RightSection = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 16.7rem;
-
+  min-width: 25%;
+  max-width: 25%;
   flex: 0;
 `;
 
@@ -49,6 +54,17 @@ const ProductCardsSection = styled.div`
 
 const ProductDetailsCardSection = styled.div`
   margin-left: 1rem;
+  width: 100%;
+  top: 16.7rem;
+  left: 0;
+
+  position: sticky;
+  position: -webkit-sticky;
+`;
+
+const BlankSection = styled.div`
+  width: 100%;
+  height: 300px;
 `;
 
 export {
@@ -60,4 +76,5 @@ export {
   LeftSection,
   RightSection,
   ProductDetailsCardSection,
+  BlankSection,
 };
