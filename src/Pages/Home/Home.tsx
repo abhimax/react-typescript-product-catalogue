@@ -92,9 +92,9 @@ const HomePage = () => {
   }, [searchValue, productsData, categories]);
 
   return (
-    <Container>
-      <Section>
-        <LeftSection>
+    <Container className="h-container">
+      <Section className="h-section">
+        <LeftSection className="h-left-section">
           <Header />
 
           <TabsSection>
@@ -115,7 +115,7 @@ const HomePage = () => {
           <BlankSection />
         </LeftSection>
 
-        <RightSection>
+        <RightSection className="h-right-section">
           {postDetails && (
             <ProductDetailsCardSection>
               <ProductDetails props={postDetails} />

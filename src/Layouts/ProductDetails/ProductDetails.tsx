@@ -1,8 +1,11 @@
 import { FC, useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { Options } from "../Options/index";
 import { Tag, Button } from "../../components/index";
 
 import {
+  HeaderSection,
   Section,
   HeadingSection,
   HeadingText,
@@ -13,12 +16,18 @@ import {
   DetailsSection,
   DetailsText,
   OptionsSection,
+  CloseButtonSection,
+  CloseButtonIcon,
 } from "./ProductDetails.styled";
+
+import { setProduct } from "../../store/reducer/productDetails.reducer";
 
 import { IProductDetailsProps } from "./productDetails.d";
 
 const ProductDetails: FC<IProductDetailsProps> = ({ props }) => {
   const [activeOption, setActiveOption] = useState<string>(props?.option1!);
+
+  const dispatch = useDispatch();
 
   const buttonClickHandel = () => {
     return window.open(
@@ -27,11 +36,29 @@ const ProductDetails: FC<IProductDetailsProps> = ({ props }) => {
       "noopener noreferrer"
     );
   };
+
+  const closeButtonHandel = () => {
+    return dispatch(
+      setProduct({
+        product: null,
+      })
+    );
+  };
+
   return (
     <Section>
-      <HeadingSection>
-        <HeadingText>Product Details</HeadingText>
-      </HeadingSection>
+      <HeaderSection>
+        <HeadingSection>
+          <HeadingText>Product Details</HeadingText>
+        </HeadingSection>
+
+        <CloseButtonSection
+          className="close-button"
+          onClick={closeButtonHandel}
+        >
+          <CloseButtonIcon src="icons/close.svg" />
+        </CloseButtonSection>
+      </HeaderSection>
 
       <NameSection>
         <NameText>{props?.productName}</NameText>
@@ -51,7 +78,7 @@ const ProductDetails: FC<IProductDetailsProps> = ({ props }) => {
         <DetailsText>{props?.description}</DetailsText>
 
         <OptionsSection>
-        <Options
+          <Options
             props={[
               {
                 label: props?.option1,
