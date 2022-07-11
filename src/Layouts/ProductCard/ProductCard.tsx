@@ -13,14 +13,20 @@ import {
   CategoryText,
 } from "./ProductCard.styled";
 
-import { IProductCardProps } from "./ProductCard.d"
+import { IProductCardProps } from "./productCard.d";
 
-const ProductCard: FC<IProductCardProps> = ({ props, onCardClick }) => {
+const ProductCard: FC<IProductCardProps> = ({
+  index,
+  props,
+  isActive,
+  onCardClick,
+}) => {
   return (
     <Section
       onClick={() => {
-        return onCardClick(props);
+        return onCardClick(props, index);
       }}
+      className={`${isActive ? "active-product-card" : ""}`}
     >
       <LeftSection>
         <NameSection>
@@ -35,7 +41,7 @@ const ProductCard: FC<IProductCardProps> = ({ props, onCardClick }) => {
       </LeftSection>
       <RightSection>
         <CategorySection>
-        <CategoryText>{props?.category}</CategoryText>
+          <CategoryText>{props?.category}</CategoryText>
         </CategorySection>
       </RightSection>
     </Section>

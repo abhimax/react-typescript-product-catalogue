@@ -4,7 +4,7 @@ const Section = styled.div`
   width: 100%;
   padding-bottom: 2rem;
   border-radius: 5px;
-  background-color: ${(props) => props.theme.background.secondary};
+  background-color: ${(props) => props.theme.background?.secondary};
   display: flex;
   flex-direction: column;
 `;
@@ -19,7 +19,7 @@ const HeadingText = styled.h1`
   font-size: 1.2rem;
 
   font-weight: bold;
-  color: ${(props) => props.theme.color.darkGray};
+  color: ${(props) => props.theme.color?.darkGray};
 `;
 
 const CategoriesSection = styled.div`

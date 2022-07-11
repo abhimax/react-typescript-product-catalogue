@@ -8,7 +8,7 @@ const Section = styled.div`
 
   border: 1.5px solid #e3dede;
 
-  background-color: ${(props) => props.theme.input.primary};
+  background-color: ${(props) => props.theme.input?.primary};
 
   display: flex;
   flex-direction: row;

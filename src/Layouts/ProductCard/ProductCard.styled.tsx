@@ -4,10 +4,12 @@ const Section = styled.div`
   margin: 0.3rem 0;
   border-radius: 8px;
   padding: 0.5rem 1rem 1rem 1rem;
-  background-color: ${(props) => props.theme.background.secondary};
-  cursor: pointer;
+
+  background-color: ${(props) => props.theme.background?.secondary};
+
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 `;
 
 const LeftSection = styled.div`
@@ -27,7 +29,7 @@ const NameText = styled.h1`
   font-size: 1rem;
   font-weight: 600;
 
-  color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color?.primary};
 `;
 
 const TagsSection = styled.div`
@@ -44,7 +46,7 @@ const CategoryText = styled.h1`
   font-size: 0.9rem;
   font-weight: 600;
 
-  color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color?.primary};
 `;
 
 export {

@@ -8,7 +8,7 @@ const Section = styled.div`
     font-size: 0.9rem;
     font-weight: 600;
 
-    color: ${(props) => props.theme.color.secondary};
+    color: ${(props) => props.theme.color?.secondary};
   }
 `;
 

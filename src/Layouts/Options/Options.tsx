@@ -10,7 +10,7 @@ import { IOptionsProps } from "./options.d";
 
 const Options: FC<IOptionsProps> = ({ props, active, setActive }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setActive((event.target as HTMLInputElement).value);
+    return setActive && setActive((event.target as HTMLInputElement).value);
   };
 
   return (

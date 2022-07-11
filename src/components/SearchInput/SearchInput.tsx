@@ -19,7 +19,7 @@ import {
             placeholder="Type here..."
             value={searchValue}
             onChange={(e) => {
-              return setSearchValue(e.target.value);
+              return setSearchValue && setSearchValue(e.target.value);
             }}
           />
         </InputSection>
