@@ -1,8 +1,9 @@
+
 interface IOptionProps {
-  props: {
-    label: string | null;
-    value: string | null;
-  };
+        props: {
+                label: string | null
+                value: string | null
+        }
 }
 
-export { IOptionProps };
+export { IOptionProps }

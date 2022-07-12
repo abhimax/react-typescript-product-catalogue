@@ -4,7 +4,9 @@ const Section = styled.div`
   width: 100%;
   padding-bottom: 2rem;
   border-radius: 5px;
+
   background-color: ${(props) => props.theme.background?.secondary};
+
   display: flex;
   flex-direction: column;
 `;

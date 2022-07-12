@@ -1,15 +1,16 @@
+
 interface ITabsInitialState {
-    activeTab: number
+        activeTab: number
 }
 
 interface ITabsPayload {
-    activeTab: number
+        activeTab: number
 }
 
 interface ITabsRootState {
-    tabs: {
-            activeTab: number
-    }
+        tabs: {
+                activeTab: number
+        }
 }
 
 export { ITabsInitialState, ITabsPayload, ITabsRootState }

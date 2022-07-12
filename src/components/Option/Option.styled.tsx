@@ -4,6 +4,7 @@ const Section = styled.div`
   & .MuiTypography-root {
     font-weight: 500;
     font-size: 0.9rem;
+
     color: ${(props) => props.theme.color?.secondary};
   }
 `;

@@ -1,12 +1,16 @@
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
+
 import product_data from "../../data/products.json";
+
 import {
   Tabs,
   FilterCard,
   ProductCards,
   ProductDetails,
-} from "../../Layouts/index";
+} from "../../layouts/index";
+
+import { ScrollTop } from "../../components/ScrollTop/index";
 
 import { Header } from "./components/Header/index";
 
@@ -22,10 +26,10 @@ import {
   BlankSection,
 } from "./Home.styled";
 
-import { ICategoryRootState } from "../../store/reducer/types/category.d";
-import { IProductDetailsRootState } from "../../store/reducer/types/productDetails.d";
-import { IProduct } from "../../types/types.d";
-import { ITabsRootState } from "../../store/reducer/types/tabs.d";
+import { ICategoryRootState } from "../../store/reducer/types/category";
+import { IProductDetailsRootState } from "../../store/reducer/types/productDetails";
+import { IProduct } from "../../types/types";
+import { ITabsRootState } from "../../store/reducer/types/tabs";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -48,12 +52,14 @@ function TabPanel(props: TabPanelProps) {
     </div>
   );
 }
+
 const HomePage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
 
   const [productsData, setProductsData] =
-  useState<Array<IProduct>>(product_data);
+    useState<Array<IProduct>>(product_data);
 
+  // store selector
   const categories = useSelector(
     (state: ICategoryRootState) => state.category.category
   );
@@ -100,22 +106,26 @@ const HomePage = () => {
           <TabsSection>
             <Tabs />
           </TabsSection>
-          <TabPanel value={activeTab} index={0}>
-          <FilterCardSection>
-            <FilterCard
-              searchValue={searchValue}
-              setSearchValue={setSearchValue}
-            />
-          </FilterCardSection>
 
-          <ProductCardsSection>
-            <ProductCards cardsData={p_data} />
-          </ProductCardsSection>
+          {/* tab panel */}
+          <TabPanel value={activeTab} index={0}>
+            <FilterCardSection>
+              <FilterCard
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
+              />
+            </FilterCardSection>
+
+            <ProductCardsSection>
+              <ProductCards cardsData={p_data} />
+            </ProductCardsSection>
           </TabPanel>
+
           <BlankSection />
         </LeftSection>
 
         <RightSection className="h-right-section">
+          {/* post details */}
           {postDetails && (
             <ProductDetailsCardSection>
               <ProductDetails props={postDetails} />
@@ -124,6 +134,8 @@ const HomePage = () => {
           )}
         </RightSection>
       </Section>
+
+      <ScrollTop />
     </Container>
   );
 };

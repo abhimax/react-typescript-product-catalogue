@@ -22,7 +22,7 @@ import {
 
 import { setProduct } from "../../store/reducer/productDetails.reducer";
 
-import { IProductDetailsProps } from "./productDetails.d";
+import { IProductDetailsProps } from "./ProductDetails.d";
 
 const ProductDetails: FC<IProductDetailsProps> = ({ props }) => {
   const [activeOption, setActiveOption] = useState<string>(props?.option1!);

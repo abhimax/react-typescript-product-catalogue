@@ -9,7 +9,8 @@ import {
   DetailsSection,
   DetailsText,
 } from "./Option.styled";
-import { IOptionProps } from "./option.d";
+
+import { IOptionProps } from "./Option.d";
 
 const Option: FC<IOptionProps> = ({ props }) => {
   return (

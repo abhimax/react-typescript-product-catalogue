@@ -6,7 +6,7 @@ import { Option } from "../../components/index";
 
 import { Section } from "./Options.styled";
 
-import { IOptionsProps } from "./options.d";
+import { IOptionsProps } from "./Options.d";
 
 const Options: FC<IOptionsProps> = ({ props, active, setActive }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

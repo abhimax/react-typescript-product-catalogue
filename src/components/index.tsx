@@ -1,6 +1,6 @@
-export { Button } from "./Button";
-export { Category } from "./Category";
-export { Option } from "./Option";
-export { SearchInput } from "./SearchInput";
-export { Tag } from "./Tag";
-//export { ScrollTop } from "./ScrollTop";
+export { Button } from "./Button/index";
+export { Category } from "./Category/index";
+export { Option } from "./Option/index";
+export { SearchInput } from "./SearchInput/index";
+export { Tag } from "./Tag/index";
+export { ScrollTop } from "./ScrollTop/index";

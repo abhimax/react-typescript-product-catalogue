@@ -13,7 +13,7 @@ import {
   CategoryText,
 } from "./ProductCard.styled";
 
-import { IProductCardProps } from "./productCard.d";
+import { IProductCardProps } from "./ProductCard.d";
 
 const ProductCard: FC<IProductCardProps> = ({
   index,

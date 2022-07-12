@@ -8,6 +8,7 @@ import { setCategory } from "../../store/reducer/category.reducer";
 import { setProduct } from "../../store/reducer/productDetails.reducer";
 
 import { Section, CheckBoxSection } from "./Category.styled";
+
 import { ICategoryProps } from "./category.d";
 
 const Category: FC<ICategoryProps> = ({
@@ -31,12 +32,14 @@ const Category: FC<ICategoryProps> = ({
       })
     );
   };
-  
+
   return (
     <Section>
       <CheckBoxSection>
         <FormControlLabel
-          control={<Checkbox defaultChecked={defaultChecked} checked={checked} />}
+          control={
+            <Checkbox defaultChecked={defaultChecked} checked={checked} />
+          }
           onClick={clickHandel}
           label={label}
           value={value}

@@ -1,5 +1,6 @@
+
 interface ITagProps {
-    label: string
+        label: string
 }
 
 export { ITagProps }

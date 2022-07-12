@@ -5,7 +5,7 @@ const Section = styled.div`
   padding: 0 1rem;
   border-radius: 5px;
 
-  background-color: ${(props) => props.theme.button.primary};
+  background-color: ${(props) => props.theme.button?.primary};
 
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@ const LabelText = styled.h1`
   font-size: 0.9rem;
   font-weight: 600;
 
-  color: ${(props) => props.theme.color.white};
+  color: ${(props) => props.theme.color?.white};
 `;
 
 export { Section, Label, LabelText };

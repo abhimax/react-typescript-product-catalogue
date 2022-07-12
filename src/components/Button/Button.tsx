@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Section, Label, LabelText } from "./Button.styled";
 
-import { IButtonProps } from "./button.d";
+import { IButtonProps } from "./Button.d";
 
 const Button: FC<IButtonProps> = ({ label, onClick }) => {
   return (

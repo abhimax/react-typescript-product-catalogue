@@ -4,7 +4,9 @@ const Section = styled.div`
   width: 100%;
   border-radius: 5px;
   padding-bottom: 2rem;
-  background-color: ${(props) => props.theme.background.secondary};
+
+  background-color: ${(props) => props.theme.background?.secondary};
+
   display: flex;
   flex-direction: column;
 
@@ -28,6 +30,7 @@ const HeaderSection = styled.div`
 
   border: 3px solid transparent;
   border-bottom-color: #f8f8f8;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,12 +38,11 @@ const HeaderSection = styled.div`
 
 const HeadingSection = styled.div``;
 
-
 const HeadingText = styled.h1`
   font-size: 1.2rem;
 
   font-weight: bold;
-  color: ${(props) => props.theme.color.darkGray};
+  color: ${(props) => props.theme.color?.darkGray};
 `;
 
 const CloseButtonSection = styled.div`
@@ -48,7 +50,7 @@ const CloseButtonSection = styled.div`
   width: 40px;
   border-radius: 999px;
 
-  background-color: ${(props) => props.theme.background.primary};
+  background-color: ${(props) => props.theme.background?.primary};
 
   display: flex;
   align-items: center;
@@ -66,30 +68,30 @@ const NameText = styled.h1`
   font-size: 1rem;
   font-weight: 600;
 
-  color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color?.primary};
 `;
 
 const TagsSection = styled.div`
   padding: 0 1.2rem;
   margin-top: 0.8rem;
-  flex-wrap: wrap;
+
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 const ButtonSection = styled.div`
   padding: 0 1.2rem;
-  margin-top: 0.8rem;
   margin-top: 1.8rem;
 `;
 
 const DetailsSection = styled.div`
-padding: 0 1rem;
-margin-top: 0.8rem;
+  padding: 0 1rem;
+  margin-top: 0.8rem;
 `;
 
 const DetailsText = styled.p`
-font-size: 0.85rem;
+  font-size: 0.85rem;
   font-weight: 600;
 `;
 

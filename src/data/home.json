@@ -1,13 +1,13 @@
 {
-    "header": {
-      "heading": "Create Demand",
-      "subHeading": "Search the product you need here. Use tags to find any alternative."
-    },
+  "header": {
+    "heading": "Create Demand",
+    "subHeading": "Search the product you need here. Use tags to find any alternative."
+  },
   "categories": [
     {
       "id": "ci-1",
-      "label": "Software Development",
-      "value": "Software Development"
+      "label": "Developer",
+      "value": "Developer"
     },
     {
       "id": "ci-2",
@@ -17,18 +17,8 @@
 
     {
       "id": "ci-3",
-      "label": "Graphic Editors",
-      "value": "Graphic Editors"
-    },
-    {
-      "id": "ci-4",
-      "label": "Text Editors",
-      "value": "Text Editors"
-    },
-    {
-      "id": "ci-5",
-      "label": "Management Tools",
-      "value": "Management Tools"
+      "label": "Data Analytics",
+      "value": "Data Analytics"
     }
   ]
-  }
+}

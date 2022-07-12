@@ -1,6 +1,7 @@
+
 interface IButtonProps {
-  label: string;
-  onClick: () => void;
+        label: string
+        onClick: () => void
 }
 
-export { IButtonProps };
+export { IButtonProps }

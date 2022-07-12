@@ -1,5 +1,7 @@
-import { IProduct } from "../../types/types.d";
+import { IProduct } from "../../types/types.d"
+
 interface IProductDetailsProps {
-  props: IProduct;
+        props: IProduct
 }
-export { IProductDetailsProps };
+
+export { IProductDetailsProps }

@@ -4,11 +4,12 @@ const Container = styled.div`
   min-height: 100vh;
   width: 100vw;
 
-  background-color: ${(props) => props.theme.background.primary};
+  background-color: ${(props) => props.theme.background?.primary};
 
   display: flex;
   justify-content: center;
-  position:relative;
+
+  position: relative;
 `;
 
 const Section = styled.div`
@@ -16,6 +17,7 @@ const Section = styled.div`
 
   display: flex;
   flex-direction: row;
+
   @media screen and (min-width: 0px) and (max-width: 800px) {
     width: 100%;
   }
@@ -27,17 +29,22 @@ const Section = styled.div`
 
 const LeftSection = styled.div`
   max-width: 70%;
+
   display: flex;
   flex-direction: column;
+
   overflow: hidden;
   overflow-y: scroll;
+
   flex: 1;
+
   &::-webkit-scrollbar {
     display: none;
   }
 
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+
   @media screen and (min-width: 0px) and (max-width: 800px) {
     max-width: 100%;
     margin: 0 1rem;
@@ -47,9 +54,12 @@ const LeftSection = styled.div`
 const RightSection = styled.div`
   display: flex;
   flex-direction: column;
+
   min-width: 25%;
   max-width: 25%;
+
   flex: 0;
+
   @media screen and (min-width: 0px) and (max-width: 800px) {
     min-width: 0%;
     max-width: 0%;
@@ -69,13 +79,14 @@ const ProductCardsSection = styled.div`
 `;
 
 const ProductDetailsCardSection = styled.div`
-  margin-left: 1rem;
   width: 100%;
+  margin-left: 1rem;
   top: 16.7rem;
   left: 0;
-  width: 100%;
+
   position: sticky;
   position: -webkit-sticky;
+
   @media screen and (min-width: 0px) and (max-width: 800px) {
     height: 100%;
     width: 100%;

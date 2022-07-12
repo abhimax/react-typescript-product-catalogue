@@ -1,7 +1,7 @@
-export { Categories } from "./Categories";
-export { FilterCard } from "./FilterCard";
-export { Options } from "./Options";
-export { ProductCard } from "./ProductCard";
-export { ProductDetails } from "./ProductDetails";
-export { Tabs } from "./Tabs";
-export { ProductCards } from "./ProductCards";
+export { ProductCard } from "./ProductCard/index";
+export { ProductDetails } from "./ProductDetails/index";
+export { Tabs } from "./Tabs/index";
+export { Categories } from "./Categories/index";
+export { Options } from "./Options/index";
+export { FilterCard } from "./FilterCard/index";
+export { ProductCards } from "./ProductCards/index";

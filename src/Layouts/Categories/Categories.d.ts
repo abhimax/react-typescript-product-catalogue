@@ -1,3 +1,4 @@
-interface ICategoriesProps {}
 
-export { ICategoriesProps };
+interface ICategoriesProps { }
+
+export { ICategoriesProps }

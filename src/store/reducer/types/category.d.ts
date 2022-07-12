@@ -1,15 +1,16 @@
+
 interface ICategoryInitialState {
-  category: Array<string>;
+        category: Array<string>
 }
 
 interface ICategoryPayload {
-  category: string;
+        category: string
 }
 
 interface ICategoryRootState {
-  category: {
-    category: Array<string>;
-  };
+        category: {
+                category: Array<string>
+        }
 }
 
-export { ICategoryInitialState, ICategoryPayload, ICategoryRootState };
+export { ICategoryInitialState, ICategoryPayload, ICategoryRootState }
