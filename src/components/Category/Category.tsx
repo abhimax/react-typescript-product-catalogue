@@ -1,14 +1,10 @@
 import { FC } from "react";
 import { useDispatch } from "react-redux";
-
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-
 import { setCategory } from "../../store/reducer/category.reducer";
 import { setProduct } from "../../store/reducer/productDetails.reducer";
-
 import { Section, CheckBoxSection } from "./Category.styled";
-
 import { ICategoryProps } from "./category.d";
 
 const Category: FC<ICategoryProps> = ({

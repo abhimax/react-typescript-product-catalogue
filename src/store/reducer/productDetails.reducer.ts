@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
 import { IProductDetailsInitialState, IProductDetailsPayload } from "./types/productDetails.d";
 
 const initialState: IProductDetailsInitialState = {
@@ -17,5 +16,4 @@ export const slice = createSlice({
 });
 
 export const { setProduct } = slice.actions;
-
 export default slice.reducer;

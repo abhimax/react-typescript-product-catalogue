@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
 import { ITabsInitialState, ITabsPayload } from "./types/tabs.d";
 
 const initialState: ITabsInitialState = {
@@ -17,5 +16,4 @@ export const slice = createSlice({
 });
 
 export const { setTab } = slice.actions;
-
 export default slice.reducer;
