@@ -1,3 +1,27 @@
+# Product Catalogue
+
+## Tech Stack
++ React with Type Script
++ React Redux & Redux Toolkit
++ styled-components
+
+## Features
++ View product on the menu page
++ Filter product
++ Search products
++ View product details
+
+### Home
+![PRODUCTCATALOUGE!](readme-res/product-catalogue-home.png)
+
+### Filter
+![PRODUCTCATALOUGE2!](readme-res/product-catalogue-filter.png)
+
+### Item selected
+![PRODUCTCATALOUGE3!](readme-res/product-catalogue-item-selected.png)
+
+### Search
+![PRODUCTCATALOUGE4!](readme-res/product-catalogue-search.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
